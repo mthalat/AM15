@@ -42,7 +42,7 @@ const staticPath = path.resolve(__dirname, "../../follower-bot/dist/public");
 app.use(express.static(staticPath));
 
 // SPA fallback — any non-API route returns index.html (Express 5 syntax)
-app.get("/{*splat}", (_req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.sendFile(path.join(staticPath, "index.html"));
 });
 
